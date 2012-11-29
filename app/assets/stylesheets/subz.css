@@ -16,14 +16,21 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	z-index: 100;
+	z-index: 0;
 }
 
-#sidebar {
-	background: #fff;
+.sidebar {
+	background: rgba(255,255,255,.7);
+	border-left: 1px #aaa solid;
 	bottom: 0;
+	overflow: scroll;
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 15%;
+	width: 20%;
+	z-index: 100;
+}
+
+.hidden {
+	width: 5%;
 }
