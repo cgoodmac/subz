@@ -1,0 +1,29 @@
+.get-data-button {
+	width: 400px;
+	margin: auto;
+}
+
+.get-data-button input {
+	background: #178EBD;
+	color: white;
+	height: 200px;
+	width: 400px;
+}
+
+#map-canvas {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+
+#sidebar {
+	background: #fff;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 15%;
+}
