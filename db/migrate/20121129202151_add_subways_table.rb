@@ -6,5 +6,6 @@ class AddSubwaysTable < ActiveRecord::Migration
       t.float :long
       t.string :line
       t.timestamps
+    end
   end
 end
