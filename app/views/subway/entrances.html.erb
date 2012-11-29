@@ -1,4 +1,8 @@
 <div id="map-canvas">
+	<script>
+		display_map();
+	</script>
+	<%= render :partial => 'pins', :collection => @entrances, :as => :entrance %>
 </div>
 
 <div class="sidebar">
@@ -6,10 +10,5 @@
 	<% @lines.each do |line| %>
 		<li><%= line.name %></li>
 	<% end %>
+	</ul>
 </div>
-
-<% @entrances.each do |entrance| %>
-		<script>
-		add_marker(<%= entrance.lat %>, <%= entrance.long %>, "<%= entrance.name %>");
-		</script>
-<% end %>

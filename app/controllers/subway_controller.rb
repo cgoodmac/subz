@@ -34,6 +34,7 @@ class SubwayController < ApplicationController
   def entrances
     @lines = Line.all
     @entrances = Entrance.all
+    # binding.pry
   end
 
 end  
