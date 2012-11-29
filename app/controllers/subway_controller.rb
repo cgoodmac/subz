@@ -3,7 +3,7 @@ class SubwayController < ApplicationController
 
   end
 
-  def entrances
+  def populate
 
     Entrance.delete_all
 
@@ -15,7 +15,7 @@ class SubwayController < ApplicationController
       lat = e[9][1]
       long = e[9][2]
       name = e[10]
-      lines_string = e[12]
+      lines_string = e[12].gsub(/.{3}Express/, '')
 
       e1 = Entrance.create(:name => name, :lat => lat, :long => long, :line => lines_string)
 
@@ -23,6 +23,7 @@ class SubwayController < ApplicationController
 
       lines_array.each do |l|
         line = Line.where(:name => l).first
+
         line.entrances << e1
       end
 
