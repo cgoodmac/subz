@@ -1,7 +1,15 @@
 <div id="map-canvas">
-	
 </div>
 
 <div class="sidebar">
-	
+	<ul>
+	<% @lines.each do |line| %>
+		<li><%= line.name %></li>
+	<% end %>
 </div>
+
+<% @entrances.each do |entrance| %>
+		<script>
+		add_marker(<%= entrance.lat %>, <%= entrance.long %>, "<%= entrance.name %>");
+		</script>
+<% end %>

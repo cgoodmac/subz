@@ -4,8 +4,8 @@ var map,
 $(function() {
 	function display_map () {
 		var mapOptions = {
-			center: new google.maps.LatLng("40.636375333000046","-73.9946119999999"),
-			zoom: 11,
+			center: new google.maps.LatLng("40.73","-73.93"),
+			zoom: 13,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 
@@ -20,3 +20,9 @@ $(function() {
 	function hideSidebar () {
 		$('.sidebar').toggleClass('hidden');
 	}
+
+function add_marker(lat, long, title){
+	console.log("marker should be added");
+  var latlng = new google.maps.LatLng(lat, long);
+  var marker = new google.maps.Marker({position: latlng, map: map, title:title});
+}

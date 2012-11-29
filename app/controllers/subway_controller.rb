@@ -23,12 +23,17 @@ class SubwayController < ApplicationController
 
       lines_array.each do |l|
         line = Line.where(:name => l).first
-
         line.entrances << e1
       end
 
+      @lines = Line.all
     end
 
+  end
+
+  def entrances
+    @lines = Line.all
+    @entrances = Entrance.all
   end
 
 end  
