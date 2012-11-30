@@ -28,9 +28,30 @@
 	right: 0;
 	top: 0;
 	width: 20%;
-	z-index: 100;
+	z-index: 30;
 }
 
 .hidden {
 	width: 5%;
+}
+
+#search-form {
+	background: rgba(0,0,0,.5);
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 50;
+}
+
+#search-form .search-form-inner {
+	margin: auto;
+	padding-top: 200px;
+	width: 807px;
+}
+
+#search-form input {
+	font-size: 72px;
+	opacity: .6;
 }

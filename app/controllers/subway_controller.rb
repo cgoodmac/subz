@@ -18,15 +18,6 @@ class SubwayController < ApplicationController
       lines_string = e[12].gsub(/.{3}Express/, '')
 
       e1 = Entrance.create(:name => name, :lat => lat, :long => long, :line => lines_string)
-
-      lines_array = lines_string.split('-')
-
-      lines_array.each do |l|
-        line = Line.where(:name => l).first
-        line.entrances << e1
-      end
-
-      @lines = Line.all
     end
 
   end
@@ -34,7 +25,15 @@ class SubwayController < ApplicationController
   def entrances
     @lines = Line.all
     @entrances = Entrance.all
-    # binding.pry
+  end
+
+  def search
+    query = params[:query].gsub('~','')
+    if query.present? && query.downcase != "all"
+      @entrances = Entrance.text_search(query)
+    else
+      @entrances = Entrance.all
+    end
   end
 
 end  

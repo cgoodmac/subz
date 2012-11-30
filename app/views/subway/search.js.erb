@@ -1,0 +1,3 @@
+clearOverlays();
+// display_map();
+$('#map-canvas').append("<%=j render :partial => 'pins', :collection => @entrances, :as => :entrance %>");

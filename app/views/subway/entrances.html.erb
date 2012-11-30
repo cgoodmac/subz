@@ -5,10 +5,10 @@
 	<%= render :partial => 'pins', :collection => @entrances, :as => :entrance %>
 </div>
 
-<div class="sidebar">
-	<ul>
-	<% @lines.each do |line| %>
-		<li><%= line.name %></li>
-	<% end %>
-	</ul>
+<div id="search-form">
+	<div class="search-form-inner">
+		<%= form_tag '/search', :id=> 'search-box', :remote => true do %>
+			<%= text_field_tag 'query' %>
+		<% end %>
+	</div>
 </div>
